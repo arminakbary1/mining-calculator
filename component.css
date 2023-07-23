@@ -1,0 +1,114 @@
+.component1-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .component1-component1 {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+  .component1-blockchain1 {
+    top: 0px;
+    left: 0px;
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+  }
+  .component1-logoirsabtcheader1 {
+    top: 48px;
+    left: 466px;
+    width: 119px;
+    height: 60px;
+    position: absolute;
+  }
+  .component1-line {
+    top: 136px;
+    left: 65px;
+    width: 885px;
+    height: 1px;
+    position: absolute;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  }
+  .component1-rectangle1 {
+    top: 368px;
+    left: 181px;
+    width: 260px;
+    height: 56px;
+    position: absolute;
+    border-radius: 90px;
+  }
+  .component1-text {
+    top: 218px;
+    left: 612px;
+    color: rgba(255, 255, 255, 1);
+    width: 262px;
+    height: auto;
+    position: absolute;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .component1-text2 {
+    top: 370px;
+    left: 562px;
+    color: rgba(255, 255, 255, 1);
+    width: 312px;
+    height: auto;
+    position: absolute;
+    font-size: 16px;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .component1-rectangle2 {
+    top: 218px;
+    left: 181px;
+    width: 260px;
+    height: 56px;
+    position: absolute;
+    border-radius: 90px;
+  }
+  .component1-group1 {
+    top: 461px;
+    left: 480px;
+    width: 105px;
+    height: 95px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .component1-frame1 {
+    top: 0px;
+    left: 0px;
+    width: 105px;
+    height: 95px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+  .component1-button {
+    top: 0px;
+    left: 0px;
+    width: 105px;
+    height: 95px;
+    position: absolute;
+  }
+  
