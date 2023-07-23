@@ -1,11 +1,48 @@
+
 <html>
-  <head>
+<head>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-  </head>
-  <body>
-    <py-script>
-        print('Hello, World!' * 100 )
-    </py-script>
-  </body>
+  <title>Calculator</title>
+  <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML elements for the calculator GUI -->
+  <h1>Calculator</h1>
+  <label>Enter processing power (device in TH/s):</label>
+  <input type="number" id="deviceInput" />
+  <br />
+  <label>Select a cryptocurrency:</label>
+  <select id="coinSelect">
+    <option value="BTC">Bitcoin (BTC)</option>
+    <!-- Add more options for other cryptocurrencies -->
+  </select>
+  <br />
+  <button id="calculateBtn">Calculate</button>
+  <br />
+  <div id="outputDiv"></div>
+
+  <!-- JavaScript code for the calculator functionality -->
+  <script>
+    // Function to perform the calculation
+    function BTCcalculator() {
+      const device = parseFloat(document.getElementById("deviceInput").value);
+      const coin = document.getElementById("coinSelect").value;
+      // Perform the calculation as required (similar to the original code)
+      // ...
+      // Display the result in the outputDiv
+      const outputDiv = document.getElementById("outputDiv");
+      outputDiv.innerHTML = `<p>Result: ${result}</p>`;
+    }
+
+    // Event listener for the Calculate button
+    const calculateBtn = document.getElementById("calculateBtn");
+    calculateBtn.addEventListener("click", BTCcalculator);
+  </script>
+</body>
 </html>
