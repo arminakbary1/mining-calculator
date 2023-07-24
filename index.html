@@ -46,7 +46,9 @@
 
   <!-- PyScript code for the calculator functionality -->
   <py-script>
-
+    import pandas as pd
+    import requests
+    from tkinter.messagebox import showinfo
     device = Element("deviceInput")    
     
     op = Element("outputDiv")
@@ -63,6 +65,7 @@
         profit = (86400 *block_reward*device_hash)/((2**32) * difficulty)
         a = float(profit*pricee) , float(profit*pricee*30) , float(profit*pricee*30*12 )
         op.write('درآمد شما' + f' {round(a[0],2)}$ per day \n {round(a[1],2)}$ per month \n {round(a[2],2)}$ per year')
+        showinfo(title='درآمد شما',message=f' {round(a[0],2)}$ per day \n {round(a[1],2)}$ per month \n {round(a[2],2)}$ per year')
     
     
     </py-script>
