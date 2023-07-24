@@ -54,13 +54,13 @@
     import pandas as pd
     import requests
 
-    device = int(Element("deviceInput").value)    
+    device = Element("deviceInput").value  
     coin = Element("coinSelect").value
     op = Element("output")
     
     def Calculate(*args, **kwargs):
         block  = pd.read_csv('coins_data.csv')
-        device_hash = device*10**12
+        device_hash = int(device)*10**12
         price = dict(requests.get(url='https://api.coindesk.com/v1/bpi/currentprice.json').json())
         #pricee = float(price['bpi']['USD']['rate'].replace(',',''))
         pricee = 1000
