@@ -46,16 +46,17 @@
   <br />
   <button id="run" type="button" class="button is-primary" pys-onClick="Calculate">Calculate</button>
   <br />
-  <div id="outputDiv"></div>
+  <p>Output from 🐍</p>
+  <p id = 'output'></p>
 
   <!-- PyScript code for the calculator functionality -->
   <py-script>
     import pandas as pd
     import requests
 
-    device = Element("deviceInput")    
-    coin = Element("coinSelect")
-    op = Element("outputDiv")
+    device = Element("deviceInput").value    
+    coin = Element("coinSelect").value
+    op = Element("output")
     
     def Calculate(*args, **kwargs):
         block  = pd.read_csv('coins_data.csv')
