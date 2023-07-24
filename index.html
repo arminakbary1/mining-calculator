@@ -1,9 +1,15 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  
   <title>Calculator</title>
+
+  <link rel='stylesheet' type='text/css' media='screen' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  
   <style>
     /* Add your custom CSS styles here */
     body {
@@ -38,22 +44,28 @@
   <br />
   <div id="outputDiv"></div>
 
-  <!-- JavaScript code for the calculator functionality -->
-  <script>
-    // Function to perform the calculation
-    function BTCcalculator() {
-      const device = parseFloat(document.getElementById("deviceInput").value);
-      const coin = document.getElementById("coinSelect").value;
-      // Perform the calculation as required (similar to the original code)
-      // ...
-      // Display the result in the outputDiv
-      const outputDiv = document.getElementById("outputDiv");
-      outputDiv.innerHTML = `<p>Result: ${result}</p>`;
-    }
+  <!-- PyScript code for the calculator functionality -->
+  <py-script>
 
-    // Event listener for the Calculate button
-    const calculateBtn = document.getElementById("calculateBtn");
-    calculateBtn.addEventListener("click", BTCcalculator);
-  </script>
+    device = Element("deviceInput")    
+    
+    op = Element("outputDiv")
+    
+    def BTCcalculator(r,device = 1 , coin = 'BTC'):
+        block  = pd.read_csv('coins_data.csv')
+        device_hash = device*10**12
+        price = dict(requests.get(url='https://api.coindesk.com/v1/bpi/currentprice.json').json())
+        pricee = float(price['bpi']['USD']['rate'].replace(',',''))
+        i = block[block['coin'] == coin]
+        block_reward = i['reward_block']
+        difficulty = i['difficulty']
+        price = i['price']
+        profit = (86400 *block_reward*device_hash)/((2**32) * difficulty)
+        a = float(profit*pricee) , float(profit*pricee*30) , float(profit*pricee*30*12 )
+        op.write('درآمد شما' + f' {round(a[0],2)}$ per day \n {round(a[1],2)}$ per month \n {round(a[2],2)}$ per year')
+    
+    
+    </py-script>
+    
 </body>
 </html>
