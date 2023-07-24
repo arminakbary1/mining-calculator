@@ -54,7 +54,7 @@
     import pandas as pd
     import requests
 
-    device = Element("deviceInput").value    
+    device = int(Element("deviceInput").value)    
     coin = Element("coinSelect").value
     op = Element("output")
     
@@ -62,7 +62,8 @@
         block  = pd.read_csv('coins_data.csv')
         device_hash = device*10**12
         price = dict(requests.get(url='https://api.coindesk.com/v1/bpi/currentprice.json').json())
-        pricee = float(price['bpi']['USD']['rate'].replace(',',''))
+        #pricee = float(price['bpi']['USD']['rate'].replace(',',''))
+        pricee = 1000
         i = block[block['coin'] == coin]
         block_reward = i['reward_block']
         difficulty = i['difficulty']
