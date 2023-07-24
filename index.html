@@ -44,7 +44,7 @@
     <!-- Add more options for other cryptocurrencies -->
   </select>
   <br />
-  <button id="calculateBtn">Calculate</button>
+  <button id="run" type="button" class="button is-primary" pys-onClick="Calculate">Calculate</button>
   <br />
   <div id="outputDiv"></div>
 
@@ -52,11 +52,12 @@
   <py-script>
     import pandas as pd
     import requests
+
     device = Element("deviceInput")    
-    
+    coin = Element("coinSelect")
     op = Element("outputDiv")
     
-    def BTCcalculator(r,device = 1 , coin = 'BTC'):
+    def Calculate(*args, **kwargs):
         block  = pd.read_csv('coins_data.csv')
         device_hash = device*10**12
         price = dict(requests.get(url='https://api.coindesk.com/v1/bpi/currentprice.json').json())
