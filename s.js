@@ -14,7 +14,7 @@ async function getapi() {
             }else {
             profit = (price*86400 *block_reward*device*10**12)/((2**32)*difficulty)  
             }
-            alert(profit)
+            alert('در آمد روزانه شما'+profit+"دلار می باشد")
         }
     }
   }
